@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:uacademy_samll_todo_app/data/local/local_db.dart';
 import 'package:uacademy_samll_todo_app/data/models/todo_user.dart';
-import 'package:uacademy_samll_todo_app/screnns/add_screens/add_to_screen.dart';
-import 'package:uacademy_samll_todo_app/screnns/homescreen/bottom_navigator/profile_page.dart';
-import 'package:uacademy_samll_todo_app/screnns/homescreen/homescreen.dart';
+import 'package:uacademy_samll_todo_app/screnns/main_page/home/add_todo/add_todo_page.dart';
+import 'package:uacademy_samll_todo_app/screnns/main_page/home/home_page.dart';
 
 
-class BottomNavigationPage extends StatefulWidget {
-  const BottomNavigationPage({super.key});
+import 'profile/profile_page.dart';
+
+
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
   @override
-  State<BottomNavigationPage> createState() => _BottomNavigationPageState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _BottomNavigationPageState extends State<BottomNavigationPage> {
+class _MainPageState extends State<MainPage> {
   ButtomMenu _buttomMenun = ButtomMenu.add;
 
   void _selectedTab(ButtomMenu tab) {
@@ -31,7 +33,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
         index: _buttomMenun.index,
         children: [
           HomeScreen(todoFields: myTodos),
-         Profile(),
+          Profile(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -61,7 +63,6 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
               icon: Icon(Icons.person), label: 'Profile'),
         ],
         unselectedItemColor: Colors.grey,
-        selectedItemColor: Colors.deepPurple,
       ),
     );
   }

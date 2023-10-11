@@ -37,34 +37,34 @@ class DescriptionPage extends StatelessWidget {
                   Text(todo.description),
                   const SizedBox(height: 25,),
                   GestureDetector(
-                      child: Row(
-                        children: [
-                          SvgPicture.asset('assets/svg_picture/edit_icon'),
-                          const SizedBox(width: 20,),
-                          GestureDetector(
-                              onTap: ()async{
+                    child: Row(
+                      children: [
+                        SvgPicture.asset('assets/svg_picture/edit_icon'),
+                        const SizedBox(width: 20,),
+                        GestureDetector(
+                            onTap: ()async{
 
-                              },
-                              child: const Text('Edit Task')),
-                        ],
-                      ),
+                            },
+                            child: const Text('Edit Task')),
+                      ],
+                    ),
                   ),
                   const SizedBox(height: 10,),
-                 Row(
-                   children: [
-                     GestureDetector(
-                         child: SvgPicture.asset('assets/svg_picture/delete_icon'),
-                     ),
-                     const SizedBox(width: 5,),
-                     GestureDetector(
-                       onTap: ()async{
-                         LocalDatabase.deleteTodoFieldsById(todo.id!);
-                         Navigator.pop(context,true);
+                  Row(
+                    children: [
+                      GestureDetector(
+                        child: SvgPicture.asset('assets/svg_picture/delete_icon'),
+                      ),
+                      const SizedBox(width: 5,),
+                      GestureDetector(
+                          onTap: ()async{
+                            LocalDatabase.deleteTodoFieldsById(todo.id!);
+                            Navigator.pop(context,true);
 
-                       },
-                         child: Text('Delete task',style: TextStyle(color: Colors.red),))
-                   ],
-                 ),
+                          },
+                          child: Text('Delete task',style: TextStyle(color: Colors.red),))
+                    ],
+                  ),
 
                 ],
               ),
