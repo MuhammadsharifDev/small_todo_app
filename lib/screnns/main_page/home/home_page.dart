@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:uacademy_samll_todo_app/bloc/main/main_bloc.dart';
+import 'package:uacademy_samll_todo_app/core/localization/localization_page.dart';
 import 'package:uacademy_samll_todo_app/data/local/local_db.dart';
 import 'package:uacademy_samll_todo_app/data/models/todo_user.dart';
 import 'package:uacademy_samll_todo_app/screnns/main_page/home/detail/description_page.dart';
@@ -37,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
-            title: const Center(child: Text('My ToDo'),),
+            title:  Center(child: Text(LocaleLocalizations.of(context).tr('title1'),),),
             centerTitle: true,
             elevation: null,
           ),
@@ -53,14 +54,13 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 10,
               ),
-              const Text(
-                'What do you want to do today?',
-              ),
+              //Text(LocaleLocalizations.of(context).tr('title'),),
+               Text(LocaleLocalizations.of(context).tr('title2'),),
               const SizedBox(
                 height: 10,
               ),
-              const Text(
-                'Tap + to add your tasks',
+               Text(
+                LocaleLocalizations.of(context).tr('title3'),
               ),
             ],
           )

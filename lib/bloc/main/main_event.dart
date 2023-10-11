@@ -10,3 +10,11 @@ class ThemeChangeEvent extends MainEvent{
 
   final ThemeMode themeMode;
 }
+
+class LocaleChangedEvent extends MainEvent {
+  LocaleChangedEvent({
+    required this.locale,
+  });
+
+  final Locale locale;
+}

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:uacademy_samll_todo_app/bloc/main/main_bloc.dart';
 import 'package:uacademy_samll_todo_app/screnns/main_page/main_page.dart';
+
+import 'core/localization/localization_page.dart';
 
 final light = ThemeData(
   cardColor: Colors.white,
@@ -152,6 +155,17 @@ class MyApp extends StatelessWidget {
             themeMode: state.themeMode,
             theme: light,
             darkTheme: dark,
+
+            localizationsDelegates: const [
+              DemoLocalizationsDelegate(),
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            supportedLocales: const [
+              Locale('en', ''),
+              Locale('uz', ''),
+            ],
+            locale: state.locale,
             home: MainPage(),
           );
         },
